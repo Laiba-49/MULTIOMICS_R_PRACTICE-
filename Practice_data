@@ -1,0 +1,179 @@
+# Lecture 1
+setwd("C:/Users/laiba/Desktop/R_MARS/R_workshop2025")
+
+# Lecture 2
+#Assignment operators
+
+a <- 129
+
+b <- 111
+
+a <- 20
+b <- 10
+
+a <- b
+
+a <- 30
+
+gene_1 <- 123
+print(gene_1)
+
+# arithematic operators 
+
+a * b
+
+a +b
+
+
+a - b
+
+a/b
+c <- a*b
+print(c)
+
+d=a+b
+print(d)
+
+# comparison operators
+a==b
+a!=b
+a<b
+a>b
+
+a>=b
+laiba<-60
+xyz<-laiba
+xyz<-"ahmed"
+class(xyz)
+class(a)
+class(lecture_3)
+pass<- TRUE
+class(pass)
+pass="true"
+fail="false"
+class(pass)
+class(fail)
+w<-3+2
+class(w)
+w<-3+2i
+class(w)
+
+# lecture 3
+# conversion of data types
+
+class(pass)
+pass=as.logical(pass)
+class(pass)
+fail=as.logical(fail)
+class(fail)
+print(w)
+class(w)
+x=as.integer(x)
+class(x)
+print(w)
+
+f=129
+h=111
+f+h
+value(f)
+print(f)
+
+#concatenation
+
+names<- c("laiba,ali,ahmed")
+class(names)
+print(names)
+
+lecture_3 <- c("welcome to R class")
+print(lecture_3)
+
+names<- c("laiba","ali","ahmed")
+print(names)
+
+setwd("C:/Users/laiba/Desktop/R_MARS/R_workshop2025")
+
+genes_2<- c("p53, egfr, kit, ras, raf")
+print(genes_2)
+class(genes_2)
+genes_3<- 1,2,3
+
+genes_3<- (1,2,3)
+genes_3<- ("1,2,3")
+length(genes_3)
+
+genes_3<- c("1,2,3")
+length(genes_3)
+# above data structure was vectors, any data, but same type
+
+# factors, categorical data, same type of data 
+
+gender<- factor(c("male", "female", "male"))
+gender
+
+cancer<- factor(c("smoker", "non-smoker", "smoker", "smoker"))
+cancer
+
+# matrix, 2D, same data type
+
+matrix123<- matrix(c(22,11,12,14),
+                   nrow = 2, ncol = 2)
+matrix123
+proteins<- matrix(c("raf", "ras", "kit", "pdgfra"),
+                  nrow = 2, ncol = 2)
+proteins
+
+# list, 1D, different data type
+
+laiba_profile<- list(name= "laiba",
+                     age= 27,
+                     grades= "A",
+                     gender= "female")
+laiba_profile
+
+# data frame, 2D, mixed data type
+
+spring_24<- data.frame(
+  names=c("malaika", "minahil", "ahmed"),
+  age= c(27,28,26),
+  Grades= c("A", "B", "C"))
+
+spring_24
+
+# arrays, multidimensional, same date
+temperature<- c(34,45,55,60,44,27,27,4,10,12,13,70)
+temperature_array<- array(temperature,
+                          dim = c(2,3,2),
+                          dimnames = list(
+                            time= c("morning", "evening"),
+                            city= c("lahore", "skardu", "Islamabad"),
+                            day= c("day1", "day2")
+                          ))
+temperature_array
+
+# Installation of packages
+
+install.packages("gapminder")
+print(gapminder)
+library(gapminder)
+print(gapminder)
+View(gapminder)
+str(gapminder)
+
+# lecture 4
+# Data manipulation
+
+install.packages("dplyr")
+library(dplyr)
+
+library(dplyr)
+data("infert")
+View(infert)
+str(infert)
+infert$education
+?infert
+head(infert)
+str(infert)
+summary(infert)
+table(infert$education)
+infert$edu_2 <- ifelse(infert$education %in% c("0-5yrs", "6-11yrs"), "LessThanHS", "HSormore")
+infert$edu_2

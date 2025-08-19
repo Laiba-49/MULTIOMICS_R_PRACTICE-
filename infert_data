@@ -1,18 +1,75 @@
-# lecture 4
-# Data manipulation
+# dataset practice
 
 install.packages("dplyr")
 library(dplyr)
 
 library(dplyr)
+#data exploration
+
 data("infert")
 View(infert)
+dim(infert)
 str(infert)
 infert$education
 ?infert
 head(infert)
 str(infert)
 summary(infert)
+
+#data conversion
+
 table(infert$education)
 infert$edu_2 <- ifelse(infert$education %in% c("0-5yrs", "6-11yrs"), "LessThanHS", "HSormore")
 infert$edu_2
+
+#data visualization
+
+install.packages("ggplot2")
+library("ggplot2")
+
+
+#Bar plots for categorical variables (education, induced, spontaneous, case)
+
+ggplot(infert, aes(x = education)) + geom_bar(fill="skyblue")
+
+ggplot(infert, aes(x = case)) + geom_bar(fill="salmon")
+
+#Histogram / density plots for numeric variables (age, parity)
+
+ggplot(infert, aes(x = age)) + geom_histogram(binwidth = 2, fill="green")
+ggplot(infert, aes(x = age)) + geom_density(fill="purple", alpha=0.4)
+
+#Box plots of age or parity by case/control
+
+ggplot(infert, aes(x = (case), y = age, fill = factor(case))) + geom_boxplot()
+
+#Stacked bar plots of abortion history by case/control
+
+ggplot(infert, aes(x = factor(case), fill = factor(spontaneous))) + 
+  geom_bar(position = "dodge")
+
+#Violin plots (age distribution by education level)
+
+ggplot(infert, aes(x = education, y = age, fill = education)) + geom_violin()
+
+#statistical modeling
+
+#unadjusted logistic regression
+
+model1 <- glm(case ~ spontaneous + induced, data = infert, family = binomial())
+summary(model1)
+
+#adjusted logistic regression
+
+model2 <- glm(case ~ age + parity + education + spontaneous + induced, 
+              data = infert, family = binomial())
+summary(model2)
+
+#Conditional Logistic Regression (Matched Design)
+
+install.packages("survival")
+library(survival)
+
+infert$stratum <- as.factor(infert$stratum)
+infert$stratum <- as.integer(infert$stratum)
+str(infert)

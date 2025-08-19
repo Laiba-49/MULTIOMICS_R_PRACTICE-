@@ -1,0 +1,18 @@
+# lecture 4
+# Data manipulation
+
+install.packages("dplyr")
+library(dplyr)
+
+library(dplyr)
+data("infert")
+View(infert)
+str(infert)
+infert$education
+?infert
+head(infert)
+str(infert)
+summary(infert)
+table(infert$education)
+infert$edu_2 <- ifelse(infert$education %in% c("0-5yrs", "6-11yrs"), "LessThanHS", "HSormore")
+infert$edu_2

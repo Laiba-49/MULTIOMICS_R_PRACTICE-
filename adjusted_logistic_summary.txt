@@ -1,0 +1,26 @@
+
+Call:
+glm(formula = case ~ age + parity + education + spontaneous + 
+    induced, family = binomial(), data = infert)
+
+Coefficients:
+                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)      -1.13835    1.43253  -0.795   0.4268    
+age               0.03936    0.03158   1.247   0.2126    
+parity           -0.82925    0.19769  -4.195 2.73e-05 ***
+education6-11yrs -1.04277    0.79363  -1.314   0.1889    
+education12+ yrs -1.40213    0.83486  -1.679   0.0931 .  
+spontaneous1      2.03407    0.40455   5.028 4.96e-07 ***
+spontaneous2      4.09946    0.64303   6.375 1.83e-10 ***
+induced           1.28886    0.30135   4.277 1.89e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 316.17  on 247  degrees of freedom
+Residual deviance: 257.80  on 240  degrees of freedom
+AIC: 273.8
+
+Number of Fisher Scoring iterations: 4
+

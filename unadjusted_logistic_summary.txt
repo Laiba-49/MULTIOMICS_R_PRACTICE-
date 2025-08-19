@@ -1,0 +1,22 @@
+
+Call:
+glm(formula = case ~ spontaneous + induced, family = binomial(), 
+    data = infert)
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)   -1.7352     0.2806  -6.185 6.23e-10 ***
+spontaneous1   1.2876     0.3340   3.855 0.000116 ***
+spontaneous2   2.3515     0.4391   5.355 8.56e-08 ***
+induced        0.4211     0.2066   2.039 0.041494 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 316.17  on 247  degrees of freedom
+Residual deviance: 279.49  on 244  degrees of freedom
+AIC: 287.49
+
+Number of Fisher Scoring iterations: 4
+
